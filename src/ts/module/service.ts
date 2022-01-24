@@ -3,18 +3,20 @@ import { IService } from "../module/IService";
 
 
 export class service implements IService{
+    title: string;
+    constructor(title: string){
+        this.title = title
+    }
 
     getData(){
-        fetch("http://www.omdbapi.com/?i=tt3896198&apikey=1152cfbe")
+        return fetch("http://www.omdbapi.com/?i=tt3896198&apikey=1152cfbe")
         .then(response => response.json())
-        .then(data => console.log(data));
-        return service
+        .then(data => {
+            console.log(data)
+            return data;
+     
+        })      
     }
 }
 
 
-// export async function getMovies() {
-//     const response = await fetch("http://www.omdbapi.com/?i=tt3896198&apikey=1152cfbe");
-//     const movies = await response.json();
-//     return movies;
-// }

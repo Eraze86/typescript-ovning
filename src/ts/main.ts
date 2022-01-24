@@ -9,7 +9,7 @@ window.onload = function(){
 }
 class Main{
     start(service: IService){
-        // let films = new service()
+        
         console.log(service)
         
     }
